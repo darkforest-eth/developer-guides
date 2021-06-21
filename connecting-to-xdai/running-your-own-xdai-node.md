@@ -14,7 +14,7 @@ This guide will be using the openethereum node software, as it is easy to use an
 
 - [Openethereum Windows v3.2.5](https://github.com/openethereum/openethereum/releases/download/v3.2.5/openethereum-windows-v3.2.5.zip)
 
-- [Source](https://github.com/openethereum/openethereum/archive/refs/tags/v3.2.5.zip)
+- [Source](https://github.com/openethereum/openethereum/archive/refs/tags/v3.2.6.zip)
 
 
 ## Running Your Node
