@@ -8,7 +8,7 @@ This guide will be using the openethereum node software, as it is easy to use an
 
 ### Download
 
-- [Openethereum Linux v3.2.5](https://github.com/openethereum/openethereum/releases/download/v3.2.5/openethereum-linux-v3.2.5.zip)
+- [Openethereum Linux v3.2.6](https://github.com/openethereum/openethereum/releases/download/v3.2.6/openethereum-linux-v3.2.6.zip)
 
 - [Openethereum MacOS v3.2.5](https://github.com/openethereum/openethereum/releases/download/v3.2.5/openethereum-macos-v3.2.5.zip)
 
