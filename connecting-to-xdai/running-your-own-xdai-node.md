@@ -12,7 +12,7 @@ This guide will be using the openethereum node software, as it is easy to use an
 
 - [Openethereum MacOS v3.2.6](https://github.com/openethereum/openethereum/releases/download/v3.2.6/openethereum-macos-v3.2.6.zip)
 
-- [Openethereum Windows v3.2.5](https://github.com/openethereum/openethereum/releases/download/v3.2.5/openethereum-windows-v3.2.5.zip)
+- [Openethereum Windows v3.2.6](https://github.com/openethereum/openethereum/releases/download/v3.2.6/openethereum-windows-v3.2.6.zip)
 
 - [Source](https://github.com/openethereum/openethereum/archive/refs/tags/v3.2.6.zip)
 
