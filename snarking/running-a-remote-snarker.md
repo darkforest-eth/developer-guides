@@ -55,3 +55,6 @@ Like the remote miner, if your server doesn't have an ssl cert (it probably does
 
 
 Be sure to disable adblockers as they can block outbound requests from the browser to the server, causing moves to fail!
+
+
+If you are running the snarking server on the same machine as your browser be sure to use `http://` not `https://` when connecting to it!
