@@ -20,3 +20,5 @@ The rolling average of gas costs can be found on [blockscout](https://blockscout
 You want to be setting your gas to at least average. However everyone else is also checking this number and pushing their price up, so you might want to always be 1.1 * avg or something. Fast on the otherhand is computed to get you into the next block hopefully gauranteed.
 
 You can set your gas per transaction in the Dark Forest settings menu.
+
+![](../.gitbook/assets/df-settings-gas.png)
