@@ -1,6 +1,6 @@
 # What is gas?
 
-Blockchains are a marketplace where you pay to have your transaction included. When the market is full there are two options. You can wait it out and not submit any transactions until the price falls, or you can overpay so your transactions are chosen over someone elses.
+Blockchains are a marketplace where you pay to have your transaction included in a block. When blocks are full, you can either wait until there is more space available, or you can overpay so your transactions are prioritized. 
 
 Gas is priced in GWei, a subunit of the network token (in this case xdai). There are 1,000,000,000 GWei in 1 xdai. Different types of transactions take longer to process and run for longer on the blockchain. So a Dark Forest Move might take 1million gas, other actions are smaller at 100k gas, some larger, like minting nfts.
 
