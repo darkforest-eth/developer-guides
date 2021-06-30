@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Welcome!](README.md)
+* [FAQ](faq/faq.md)
 
 ## Connecting to the blockchain <a id="connecting-to-xdai"></a>
 
