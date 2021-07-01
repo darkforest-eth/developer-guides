@@ -23,11 +23,11 @@
 * [Running a headless miner](mining/running-a-headless-miner.md)
 * [Connecting to a remote \(headless\) miner](mining/connecting-to-a-remote-headless-miner.md)
 
-## Local development
+## Developer resources
 
-* [Running a local client](local-development/running-a-local-client.md)
-* [Developing plugins locally](local-development/developing-plugins-locally.md)
-* [3rd-party contract development](local-development/3rd-party-contract-development.md)
+* [Running a custom client](developer-resources/custom-game-client-development.md)
+* [Developing plugins locally](developer-resources/developing-plugins-locally.md)
+* [3rd-party contract development](developer-resources/3rd-party-contract-development.md)
 
 ## SNARKing
 
