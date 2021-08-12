@@ -185,6 +185,6 @@ But this won't:
 
 Theres online [case converters](https://search.brave.com/search?q=tolowercase+online&source=web) that can help if you find yourself in this predicimant
 
-### planetlocations dont have a 0x in front
+### Leading 0x and padding
 
-User ids (which are actually ethereum wallet addresses) are always shown with a leading 0x  (0x0f45aba574aceba2e0717ca86e910211b34f9db9) to indicate they are a hex string. However planet locationId (00000000004896511cb246d2e6dfcde2dccc1b3855fcf69b53e046b09a929953) do NOT use a 0x in front and are 0 padded to 64 characters.
+User ids (which are actually ethereum wallet addresses) are always shown with a leading 0x  and are zero paddded to 42 characters (0x0f45aba574aceba2e0717ca86e910211b34f9db9) . However planet locationId (00000000004896511cb246d2e6dfcde2dccc1b3855fcf69b53e046b09a929953) do NOT use a 0x in front and are 0 padded to 64 characters.
