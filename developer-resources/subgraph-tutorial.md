@@ -157,3 +157,34 @@ Query that shows the planets in the range 101-201 that are foundries greater or 
    }
  }
 ```
+
+
+## Troubleshooting
+
+### lower case
+
+All ids like are lower case like 0x0f45aba574aceba2e0717ca86e910211b34f9db9. Sadly blockscout and metamask can occasionally mix case in ids like 0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9!
+
+So for example this might return data:
+```
+{
+  players(where: {id: "0x0f45aba574aceba2e0717ca86e910211b34f9db9"}) {
+      id
+  }
+}
+```
+
+But this won't:
+```
+{
+  players(where: {id: "0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9"}) {
+      id
+  }
+}
+```
+
+Theres online [case converters](https://search.brave.com/search?q=tolowercase+online&source=web) that can help if you find yourself in this predicimant
+
+### planetlocations dont have a 0x in front
+
+User ids (which are actually ethereum wallet addresses) are always shown with a leading 0x  (0x0f45aba574aceba2e0717ca86e910211b34f9db9) to indicate they are a hex string. However planet locationId (00000000004896511cb246d2e6dfcde2dccc1b3855fcf69b53e046b09a929953) do NOT use a 0x in front and are 0 padded to 64 characters.
