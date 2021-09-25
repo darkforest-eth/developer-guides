@@ -27,3 +27,10 @@ But thats not all. With that knowledge you should be able to write contracts tha
 ## Circuits developers
 
 Dark Forest's innovative gameplay comes in no small part from its [ZK circuits](https://github.com/darkforest-eth/eth) design utilizing [iden3's circomlib](https://github.com/iden3/circomlib)
+
+## Unaudited Community Resources
+
+**WARNING**
+Nothing in the Dark Forest ecosystem has any guarantee of being audited. Smart contracts could be malicious or be found to be insecure. Further, all plugins and pasted code in the Dark Forest console have access to your private key and ability to sign transactions (without a cpnfirmation popup). This means they could now or in the future take all your funds, planets, artifacts etc from your burner wallet. You should rotate burner wallets often, not keep more funds or nfts than you're willing to lose, and be careful using any plugins that you haven't written yourself or by someone you trust completely. Further, some plugins dynamically load dependencies under the hood meaning a 'safe' plugin could become unsafe in the future! All use is at your own risk.
+
+Theres a whole wild world of amazing community creations. They're mostly being tracked at the [awesome darkforest repo](https://github.com/snowtigersoft/awesome-darkforest)
