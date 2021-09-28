@@ -13,7 +13,8 @@ Like the contract, the subgraph doesn’t know any map data and can’t tell you
 The query language is called graphql and can take some getting used to. Thegraph explorer has a nice right column that allows you to investigate the schema to see what columns and fields are available.
 
 A little guide of a small query getting upgraded to a big one using different commands/properties. This query will show you all the planet ids (well the first 100 by default) that the contract knows about.
-```
+
+```graphql
 {
   planets {
     id
@@ -22,7 +23,9 @@ A little guide of a small query getting upgraded to a big one using different co
 ```
 
 Query that shows planets that are foundries (RUINS=Foundries) ordered by their id
-```
+
+```graphql
+
 {
   planets(where:{planetType:RUINS}) {
     id
@@ -31,7 +34,9 @@ Query that shows planets that are foundries (RUINS=Foundries) ordered by their i
 ```
 
 Query that shows planets that are foundries with their respective level (ordered by their id...)
-```
+
+```graphql
+
 {
   planets(where:{planetType:RUINS}) {
     id
@@ -41,7 +46,9 @@ Query that shows planets that are foundries with their respective level (ordered
 ```
 
 Query that shows planets that are foundries greater or equal to level 8 with their respective level (ordered by their id...)
-```
+
+```graphql
+
 {
   planets(where:{planetType:RUINS, planetLevel_gte:8}) {
     id
@@ -51,7 +58,9 @@ Query that shows planets that are foundries greater or equal to level 8 with the
 ```
 
 Query that shows planets that are foundries greater or equal to level 8 with their respective level and the owners id of each foundry
-```
+
+```graphql
+
 {
   planets(where:{planetType:RUINS, planetLevel_gte:8}) {
     id
@@ -64,7 +73,9 @@ Query that shows planets that are foundries greater or equal to level 8 with the
 ```
 
 Query that shows planets that are foundries greater or equal to level 8 with their respective level, owner and coords (Coords only will be shown if the planet has been broadcasted by someone)
-```
+
+```graphql
+
 {
   planets(where:{planetType:RUINS, planetLevel_gte:8}) {
     id
@@ -79,7 +90,8 @@ Query that shows planets that are foundries greater or equal to level 8 with the
 ```
 
 Query that shows planets that are foundries greater or equal to level 8 with their respective level, owner, coords and type of space
-```
+
+```graphql
 {
   planets(where:{planetType:RUINS, planetLevel_gte:8}) {
     id
@@ -95,7 +107,8 @@ Query that shows planets that are foundries greater or equal to level 8 with the
 ```
 
 Query that shows planets that are foundries greater or equal to level 8 ordered by their level with their respective level, owner, coords and type of space
-```
+
+```graphql
 {
   planets(where:{planetType:RUINS, planetLevel_gte:8}, orderBy:planetLevel) {
     id
@@ -111,7 +124,8 @@ Query that shows planets that are foundries greater or equal to level 8 ordered 
 ```
 
 Query that shows planets that are foundries greater or equal to level 8 owned by "0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9" ordered by their level with their respective level, owner, coords and type of space
-```
+
+```graphql
 {
   planets(where:{planetType:RUINS, planetLevel_gte:8, owner:"0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9"}, orderBy:planetLevel) {
     id
@@ -127,7 +141,8 @@ Query that shows planets that are foundries greater or equal to level 8 owned by
 ```
 
 Query that shows the first 10 planets that are foundries greater or equal to level 8 owned by "0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9" ordered by their level with their respective level, owner, coords and type of space
-```
+
+```graphql
 {
   planets(where:{planetType:RUINS, planetLevel_gte:8, owner:"0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9"}, orderBy:planetLevel, first:10) {
     id
@@ -143,7 +158,8 @@ Query that shows the first 10 planets that are foundries greater or equal to lev
 ```
 
 Query that shows the planets in the range 101-201 that are foundries greater or equal to level 8 owned by "0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9" ordered by their level with their respective level, owner, coords and type of space
-```
+
+```graphql
 {
   planets(where:{planetType:RUINS, planetLevel_gte:8, owner:"0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9"}, orderBy:planetLevel, first:100, skip:100){
     id
@@ -158,7 +174,6 @@ Query that shows the planets in the range 101-201 that are foundries greater or 
  }
 ```
 
-
 ## Troubleshooting
 
 ### lower case
@@ -166,7 +181,8 @@ Query that shows the planets in the range 101-201 that are foundries greater or 
 All ids like are lower case like 0x0f45aba574aceba2e0717ca86e910211b34f9db9. Sadly blockscout and metamask can occasionally mix case in ids like 0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9!
 
 So for example this might return data:
-```
+
+```graphql
 {
   players(where: {id: "0x0f45aba574aceba2e0717ca86e910211b34f9db9"}) {
       id
@@ -175,7 +191,8 @@ So for example this might return data:
 ```
 
 But this won't:
-```
+
+```graphql
 {
   players(where: {id: "0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9"}) {
       id
