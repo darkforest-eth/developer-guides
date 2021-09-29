@@ -1,5 +1,5 @@
 ---
-description: Community-sourced DF v0.6 developer resources
+description: Dark Forest developer resources
 ---
 
 # Developing for Dark Forest
