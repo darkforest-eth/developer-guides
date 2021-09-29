@@ -417,42 +417,42 @@
 <h2 id="how-to-query">How to query</h2>
 <p>The query language is called graphql and can take some getting used to. Thegraph explorer has a nice right column that allows you to investigate the schema to see what columns and fields are available.</p>
 <p>A little guide of a small query getting upgraded to a big one using different commands/properties. This query will show you all the planet ids (well the first 100 by default) that the contract knows about.</p>
-<pre><code class="lang-graphql">{
+<pre><code class="lang-bash">{
   planets {
     id
   }
 }
 </code></pre>
 <p>Query that shows planets that are foundries (RUINS=Foundries) ordered by their id</p>
-<pre><code class="lang-graphql">
+<pre><code class="lang-bash">
 {
-  planets(where:{planetType:RUINS}) {
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS}) {
     id
   }
 }
 </code></pre>
 <p>Query that shows planets that are foundries with their respective level (ordered by their id...)</p>
-<pre><code class="lang-graphql">
+<pre><code class="lang-bash">
 {
-  planets(where:{planetType:RUINS}) {
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS}) {
     id
     planetLevel
   }
 }
 </code></pre>
 <p>Query that shows planets that are foundries greater or equal to level 8 with their respective level (ordered by their id...)</p>
-<pre><code class="lang-graphql">
+<pre><code class="lang-bash">
 {
-  planets(where:{planetType:RUINS, planetLevel_gte:8}) {
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS, planetLevel_gte:8}) {
     id
     planetLevel
   }
 }
 </code></pre>
 <p>Query that shows planets that are foundries greater or equal to level 8 with their respective level and the owners id of each foundry</p>
-<pre><code class="lang-graphql">
+<pre><code class="lang-bash">
 {
-  planets(where:{planetType:RUINS, planetLevel_gte:8}) {
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS, planetLevel_gte:8}) {
     id
     planetLevel
     owner {
@@ -462,9 +462,9 @@
 }
 </code></pre>
 <p>Query that shows planets that are foundries greater or equal to level 8 with their respective level, owner and coords (Coords only will be shown if the planet has been broadcasted by someone)</p>
-<pre><code class="lang-graphql">
+<pre><code class="lang-bash">
 {
-  planets(where:{planetType:RUINS, planetLevel_gte:8}) {
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS, planetLevel_gte:8}) {
     id
     planetLevel
     owner {
@@ -476,8 +476,8 @@
 }
 </code></pre>
 <p>Query that shows planets that are foundries greater or equal to level 8 with their respective level, owner, coords and type of space</p>
-<pre><code class="lang-graphql">{
-  planets(where:{planetType:RUINS, planetLevel_gte:8}) {
+<pre><code class="lang-bash">{
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS, planetLevel_gte:8}) {
     id
     planetLevel
     owner {
@@ -490,8 +490,8 @@
 }
 </code></pre>
 <p>Query that shows planets that are foundries greater or equal to level 8 ordered by their level with their respective level, owner, coords and type of space</p>
-<pre><code class="lang-graphql">{
-  planets(where:{planetType:RUINS, planetLevel_gte:8}, orderBy:planetLevel) {
+<pre><code class="lang-bash">{
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS, planetLevel_gte:8}, orderBy:planetLevel) {
     id
     planetLevel
     owner {
@@ -504,8 +504,8 @@
 }
 </code></pre>
 <p>Query that shows planets that are foundries greater or equal to level 8 owned by &quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot; ordered by their level with their respective level, owner, coords and type of space</p>
-<pre><code class="lang-graphql">{
-  planets(where:{planetType:RUINS, planetLevel_gte:8, owner:&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;}, orderBy:planetLevel) {
+<pre><code class="lang-bash">{
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS, planetLevel_gte:8, owner:<span class="hljs-string">&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;</span>}, orderBy:planetLevel) {
     id
     planetLevel
     owner {
@@ -518,8 +518,8 @@
 }
 </code></pre>
 <p>Query that shows the first 10 planets that are foundries greater or equal to level 8 owned by &quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot; ordered by their level with their respective level, owner, coords and type of space</p>
-<pre><code class="lang-graphql">{
-  planets(where:{planetType:RUINS, planetLevel_gte:8, owner:&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;}, orderBy:planetLevel, first:10) {
+<pre><code class="lang-bash">{
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS, planetLevel_gte:8, owner:<span class="hljs-string">&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;</span>}, orderBy:planetLevel, first:10) {
     id
     planetLevel
     owner {
@@ -532,8 +532,8 @@
  }
 </code></pre>
 <p>Query that shows the planets in the range 101-201 that are foundries greater or equal to level 8 owned by &quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot; ordered by their level with their respective level, owner, coords and type of space</p>
-<pre><code class="lang-graphql">{
-  planets(where:{planetType:RUINS, planetLevel_gte:8, owner:&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;}, orderBy:planetLevel, first:100, skip:100){
+<pre><code class="lang-bash">{
+  planets(<span class="hljs-built_in">where</span>:{planetType:RUINS, planetLevel_gte:8, owner:<span class="hljs-string">&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;</span>}, orderBy:planetLevel, first:100, skip:100){
     id
     planetLevel
     owner {
@@ -549,15 +549,15 @@
 <h3 id="lower-case">lower case</h3>
 <p>All ids like are lower case like 0x0f45aba574aceba2e0717ca86e910211b34f9db9. Sadly blockscout and metamask can occasionally mix case in ids like 0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9!</p>
 <p>So for example this might return data:</p>
-<pre><code class="lang-graphql">{
-  players(where: {id: &quot;0x0f45aba574aceba2e0717ca86e910211b34f9db9&quot;}) {
+<pre><code class="lang-bash">{
+  players(<span class="hljs-built_in">where</span>: {id: <span class="hljs-string">&quot;0x0f45aba574aceba2e0717ca86e910211b34f9db9&quot;</span>}) {
       id
   }
 }
 </code></pre>
 <p>But this won&apos;t:</p>
-<pre><code class="lang-graphql">{
-  players(where: {id: &quot;0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9&quot;}) {
+<pre><code class="lang-bash">{
+  players(<span class="hljs-built_in">where</span>: {id: <span class="hljs-string">&quot;0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9&quot;</span>}) {
       id
   }
 }
@@ -608,7 +608,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"How to query a subgraph","level":"5.5","depth":1,"next":{"title":"Running a remote SNARKer","level":"6.1","depth":1,"path":"snarking/running-a-remote-snarker.md","ref":"snarking/running-a-remote-snarker.md","articles":[]},"previous":{"title":"Dark Forest subgraph","level":"5.4","depth":1,"path":"developer-resources/subgraph.md","ref":"developer-resources/subgraph.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Dark Forest Developers","gitbook":"*"},"file":{"path":"developer-resources/subgraph-tutorial.md","mtime":"2021-09-29T02:28:59.608Z","type":"markdown"},"gitbook":{"version":"3.6.21","time":"2021-09-29T02:29:11.107Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"How to query a subgraph","level":"5.5","depth":1,"next":{"title":"Running a remote SNARKer","level":"6.1","depth":1,"path":"snarking/running-a-remote-snarker.md","ref":"snarking/running-a-remote-snarker.md","articles":[]},"previous":{"title":"Dark Forest subgraph","level":"5.4","depth":1,"path":"developer-resources/subgraph.md","ref":"developer-resources/subgraph.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Dark Forest Developers","gitbook":"*"},"file":{"path":"developer-resources/subgraph-tutorial.md","mtime":"2021-09-29T17:49:44.026Z","type":"markdown"},"gitbook":{"version":"3.6.21","time":"2021-09-29T17:49:56.747Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
