@@ -6,7 +6,6 @@ Welcome! cha0sg0d here. I'm a Dark Forest player and [dfdao](https://twitter.com
 - No queue of other people's transactions
 - No downtime. Thousands of other players are attempting to use the same free rpc endpoint as you otherwise!
 - Faster access. The memory and cpu speed of the free rpc is not published. By running your own node you can use a beefier box. 
-- Send more transactions, faster
 
 The options for xDai clients are [OpenEthereum](https://www.xdaichain.com/for-developers/install-xdai-client/parity) (formerly Parity) and [Nethermind](https://www.xdaichain.com/for-developers/install-xdai-client/nethermind). 
 
