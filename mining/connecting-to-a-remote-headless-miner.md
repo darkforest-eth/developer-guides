@@ -1,8 +1,6 @@
 # Connecting to a remote headless miner
 
-To connect to a miner and not having to turn off the browsers SSL/TLS you can:
-- issue a Certificate with a Domain you own and setup a proxy (comlicated)
-- port worward the miner to your localhost
+Connecting to a remote explorer should be as simple as putting your miners url in the built in Remote Miner plugin. However if that remote explorer isnt running on your localhost machine, your browser security will reject the connection. The explorer guides explain you nave to put an ssl cert on your remote server (difficult, costly) or disable insecure content for the zkga.me domain (not good security practices in crypto where we really need good security practices). But that isn't the only solution!. Instead we can make a remote server look like a local instance.
 
 ## Port forward with ssh
 
@@ -16,7 +14,7 @@ For Windows install your favorite application.
 
 ### 2. Editing `~/.ssh/config`
 
-This step is done so that you can ssh into machines without typing commandflags each time.
+This step is done so that you can ssh into machines without typing commandflags each time. Replace the 192 ip and user with your server.
 
 Here is an example entry:
     
@@ -32,7 +30,7 @@ Here is an example entry:
 
     ssh miner
 
-Once you drop into the shell start `mimc-fast`
+Once you drop into the shell start `mimc-fast` or whatever remote miner client you're using
 > Notice how `miner` stands for the entry in the `~/.ssh/config`
 
 ### Plugin use
