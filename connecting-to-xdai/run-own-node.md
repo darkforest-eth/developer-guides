@@ -4,6 +4,7 @@ Welcome! cha0sg0d here. I'm a Dark Forest player and [dfdao](https://twitter.com
 
 ### Why run your own xDai Node?
 - No queue of other people's transactions
+- No downtime. Thousands of other players are attempting to use the same free rpc endpoint as you otherwise!
 - Faster data fetching (?)
 - Send more transactions, faster
 
