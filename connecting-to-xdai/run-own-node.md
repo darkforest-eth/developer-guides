@@ -1,7 +1,5 @@
 # How to run your own xDai Node on Digital Ocean
 
-Welcome! cha0sg0d here. I'm a Dark Forest player and [dfdao](https://twitter.com/d_fdao) member. Here are the steps I took to sync an xDai node using the Nethermind client on a Digital Ocean instance.
-
 ### Why run your own xDai Node?
 - No queue of other people's transactions
 - No downtime. Thousands of other players are attempting to use the same free rpc endpoint as you otherwise!
