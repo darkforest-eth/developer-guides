@@ -7,7 +7,6 @@
 * [What is an RPC endpoint?](connecting-to-xdai/what-is-an-rpc-endpoint.md)
 * [Changing your RPC endpoint](connecting-to-xdai/changing-your-rpc-endpoint.md)
 * [Running your own xDAI node](connecting-to-xdai/running-your-own-xdai-node.md)
-* [What is Gas](gas/what-is-gas.md)
 
 ## Plugins
 
