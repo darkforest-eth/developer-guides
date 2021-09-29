@@ -1,6 +1,6 @@
 # Connecting to a remote headless miner
 
-Connecting to a remote explorer should be as simple as putting your miners url in the built in Remote Miner plugin. However if that remote explorer isnt running on your localhost machine, your browser security will reject the connection. The explorer guides explain you nave to put an ssl cert on your remote server (difficult, costly) or disable insecure content for the zkga.me domain (not good security practices in crypto where we really need good security practices). But that isn't the only solution!. Instead we can make a remote server look like a local instance.
+Connecting to a remote explorer should be as simple as putting your miners url in the built in Remote Miner plugin. However if that remote explorer isnt running on your localhost machine, your browser security will reject the connection. The explorer guide gives 2 options to fix this browser limitation. 1) you can put an ssl cert on your remote server (difficult, costly) or 2) disable insecure content for the zkga.me domain (not good security practice in crypto where we really need good security practices). But those aren't the only solution!. Instead we can make a remote server look like a local server with a few command lines.
 
 ## Port forward with ssh
 
