@@ -87,6 +87,15 @@ To avoid this, you can use [nohup](https://www.geeksforgeeks.org/nohup-command-i
 
 This command will create a new file `nohup.out` (name can be configured with `nohup ... > output.txt`) in the `nethermind` directory, with logs that you can inspect. 
 
+You can find the process id in order to stop the now backgrounded syncing process with `ps`:
+```
+root@ubuntu-s-4vcpu-8gb-nyc3-01:~/nethermind# ps
+    PID TTY          TIME CMD
+   8083 pts/0    00:00:00 bash
+  13059 pts/0    00:07:10 Nethermind.Runn
+  13441 pts/0    00:00:00 ps
+```
+And kill it with `ps PID` like `kill 13059`
 You can also check out the Digital Ocean Droplet Activity Dashboard, which should show a large increase in activity while syncing occurs.
 
 ![](../.gitbook/assets/xdai-node/activity.png)
