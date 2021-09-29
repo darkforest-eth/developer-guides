@@ -66,7 +66,11 @@ Edit your config file with something like `nano configs/xdai_dfdao.cfg` and chan
 1. `JSONRPC: {"Enabled": true}`
 2. `JSONRPC: {"Host": DIGITAL_OCEAN_PUBLIC_IP}`
   * These commands allow you to access your node from the Internet.
-3. `Network: {"ActivePeersMaxCount": 256}`
+3. Under Network add a new field.
+```
+  "Network": {
+    "ActivePeersMaxCount": 256,
+```
       > if you have a good connection and a reasonable machine then setting --Network.MaxActiveSyncPeers to 256 (see NetworkConfig secion in configuration) should give much better fast sync times (we use 256 peers to get 5 hours syncs)
       * Note that even though `ActivePeersMaxCount` is [deprecated](https://docs.nethermind.io/nethermind/ethereum-client/configuration/network), this setting worked for me (and `MaxActiveSyncPeers`) didn't.
 
