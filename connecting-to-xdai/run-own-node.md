@@ -113,4 +113,4 @@ Finally, once your node is synced or near synced, you can confirm your node is i
 
 **Thanks for reading!**
 
-If this was helpful, say thanks on [twitter](https://twitter.com/cha0sg0d11).
+This guide was originally submitted by [cha0sg0d11](https://twitter.com/cha0sg0d11).
