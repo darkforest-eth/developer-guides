@@ -1,0 +1,24 @@
+{
+  "name": "developer-guides",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Community-sourced DF v0.6 developer resources",
+  "main": "index.js",
+  "scripts": {
+    "serve": "honkit serve",
+    "build": "honkit build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkforest-eth/developer-guides.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darkforest-eth/developer-guides/issues"
+  },
+  "homepage": "https://github.com/darkforest-eth/developer-guides#readme",
+  "devDependencies": {
+    "honkit": "^3.6.21"
+  }
+}

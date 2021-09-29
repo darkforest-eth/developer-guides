@@ -1,0 +1,700 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>How to query a subgraph · Dark Forest Developers</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 3.6.21">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../snarking/running-a-remote-snarker.html" />
+    
+    
+    <link rel="prev" href="subgraph.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Developing for Dark Forest!
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Connecting to the blockchain</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../connecting-to-xdai/what-is-an-rpc-endpoint.html">
+            
+                <a href="../connecting-to-xdai/what-is-an-rpc-endpoint.html">
+            
+                    
+                    What is an RPC endpoint?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../connecting-to-xdai/changing-your-rpc-endpoint.html">
+            
+                <a href="../connecting-to-xdai/changing-your-rpc-endpoint.html">
+            
+                    
+                    Changing your RPC endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../connecting-to-xdai/running-your-own-xdai-node.html">
+            
+                <a href="../connecting-to-xdai/running-your-own-xdai-node.html">
+            
+                    
+                    Running your own xDAI node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../gas/what-is-gas.html">
+            
+                <a href="../gas/what-is-gas.html">
+            
+                    
+                    What is Gas
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Plugins</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../plugins/what-is-a-plugin.html">
+            
+                <a href="../plugins/what-is-a-plugin.html">
+            
+                    
+                    What is a plugin?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../plugins/writing-your-first-plugin.html">
+            
+                <a href="../plugins/writing-your-first-plugin.html">
+            
+                    
+                    Writing your first plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../plugins/porting-v0.5-plugins-to-v0.6.html">
+            
+                <a href="../plugins/porting-v0.5-plugins-to-v0.6.html">
+            
+                    
+                    Porting v0.5 plugins to v0.6
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Mining</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../mining/what-is-mining.html">
+            
+                <a href="../mining/what-is-mining.html">
+            
+                    
+                    What is mining?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../mining/sharing-map-data.html">
+            
+                <a href="../mining/sharing-map-data.html">
+            
+                    
+                    Sharing map data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../mining/running-a-headless-miner.html">
+            
+                <a href="../mining/running-a-headless-miner.html">
+            
+                    
+                    Running a headless miner
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../mining/connecting-to-a-remote-headless-miner.html">
+            
+                <a href="../mining/connecting-to-a-remote-headless-miner.html">
+            
+                    
+                    Connecting to a remote (headless) miner
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Developer resources</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="custom-game-client-development.html">
+            
+                <a href="custom-game-client-development.html">
+            
+                    
+                    Running a custom client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="developing-plugins-locally.html">
+            
+                <a href="developing-plugins-locally.html">
+            
+                    
+                    Developing plugins locally
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="3rd-party-contract-development.html">
+            
+                <a href="3rd-party-contract-development.html">
+            
+                    
+                    3rd-party contract development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="subgraph.html">
+            
+                <a href="subgraph.html">
+            
+                    
+                    Dark Forest subgraph
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.5" data-path="subgraph-tutorial.html">
+            
+                <a href="subgraph-tutorial.html">
+            
+                    
+                    How to query a subgraph
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">SNARKing</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../snarking/running-a-remote-snarker.html">
+            
+                <a href="../snarking/running-a-remote-snarker.html">
+            
+                    
+                    Running a remote SNARKer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Contributing</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../contributing/contributing-to-this-knowledge-base.html">
+            
+                <a href="../contributing/contributing-to-this-knowledge-base.html">
+            
+                    
+                    Contributing to this knowledge base
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >How to query a subgraph</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="subgraph-tutorial">Subgraph tutorial</h1>
+<p><a href="https://thegraph.com/docs/about/introduction" target="_blank">The Graph</a> is a decentralized protocol for indexing and querying data from blockchains. It makes it possible to query data that is difficult to query directly from the smart contract itself.</p>
+<p>For Dark Forest the subgraph acts almost as a read only excel spreadsheet client to the game where you can query for any information that is public in the smart contract.</p>
+<p>You might want to familiarize yourself with the <a href="https://dfwiki.net/wiki/Technical_Explanations" target="_blank">df wikis more technical explanation</a> of how the game works in order to understand lazy state and what is actually stored in the blockchain.</p>
+<p>Like the contract, the subgraph doesn’t know any map data and can’t tell you anything about (x, y) coordinates. Also, like the contract, the subgraph only knows about planets have been interacted with at least once. However UNLIKE the contract, the subgraph DOES apply voyage arrivals as they occur, and therefore has all the most recent ownership data!</p>
+<h2 id="how-to-query">How to query</h2>
+<p>The query language is called graphql and can take some getting used to. Thegraph explorer has a nice right column that allows you to investigate the schema to see what columns and fields are available.</p>
+<p>A little guide of a small query getting upgraded to a big one using different commands/properties. This query will show you all the planet ids (well the first 100 by default) that the contract knows about.</p>
+<pre><code class="lang-graphql">{
+  planets {
+    id
+  }
+}
+</code></pre>
+<p>Query that shows planets that are foundries (RUINS=Foundries) ordered by their id</p>
+<pre><code class="lang-graphql">
+{
+  planets(where:{planetType:RUINS}) {
+    id
+  }
+}
+</code></pre>
+<p>Query that shows planets that are foundries with their respective level (ordered by their id...)</p>
+<pre><code class="lang-graphql">
+{
+  planets(where:{planetType:RUINS}) {
+    id
+    planetLevel
+  }
+}
+</code></pre>
+<p>Query that shows planets that are foundries greater or equal to level 8 with their respective level (ordered by their id...)</p>
+<pre><code class="lang-graphql">
+{
+  planets(where:{planetType:RUINS, planetLevel_gte:8}) {
+    id
+    planetLevel
+  }
+}
+</code></pre>
+<p>Query that shows planets that are foundries greater or equal to level 8 with their respective level and the owners id of each foundry</p>
+<pre><code class="lang-graphql">
+{
+  planets(where:{planetType:RUINS, planetLevel_gte:8}) {
+    id
+    planetLevel
+    owner {
+      id
+    }
+  }
+}
+</code></pre>
+<p>Query that shows planets that are foundries greater or equal to level 8 with their respective level, owner and coords (Coords only will be shown if the planet has been broadcasted by someone)</p>
+<pre><code class="lang-graphql">
+{
+  planets(where:{planetType:RUINS, planetLevel_gte:8}) {
+    id
+    planetLevel
+    owner {
+      id
+    }
+    x
+    y
+  }
+}
+</code></pre>
+<p>Query that shows planets that are foundries greater or equal to level 8 with their respective level, owner, coords and type of space</p>
+<pre><code class="lang-graphql">{
+  planets(where:{planetType:RUINS, planetLevel_gte:8}) {
+    id
+    planetLevel
+    owner {
+      id
+    }
+    x
+    y
+    spaceType
+  }
+}
+</code></pre>
+<p>Query that shows planets that are foundries greater or equal to level 8 ordered by their level with their respective level, owner, coords and type of space</p>
+<pre><code class="lang-graphql">{
+  planets(where:{planetType:RUINS, planetLevel_gte:8}, orderBy:planetLevel) {
+    id
+    planetLevel
+    owner {
+      id
+    }
+    x
+    y
+    spaceType
+  }
+}
+</code></pre>
+<p>Query that shows planets that are foundries greater or equal to level 8 owned by &quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot; ordered by their level with their respective level, owner, coords and type of space</p>
+<pre><code class="lang-graphql">{
+  planets(where:{planetType:RUINS, planetLevel_gte:8, owner:&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;}, orderBy:planetLevel) {
+    id
+    planetLevel
+    owner {
+      id
+    }
+    x
+    y
+    spaceType
+  }
+}
+</code></pre>
+<p>Query that shows the first 10 planets that are foundries greater or equal to level 8 owned by &quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot; ordered by their level with their respective level, owner, coords and type of space</p>
+<pre><code class="lang-graphql">{
+  planets(where:{planetType:RUINS, planetLevel_gte:8, owner:&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;}, orderBy:planetLevel, first:10) {
+    id
+    planetLevel
+    owner {
+      id
+     }
+     x
+     y
+     spaceType
+   }
+ }
+</code></pre>
+<p>Query that shows the planets in the range 101-201 that are foundries greater or equal to level 8 owned by &quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot; ordered by their level with their respective level, owner, coords and type of space</p>
+<pre><code class="lang-graphql">{
+  planets(where:{planetType:RUINS, planetLevel_gte:8, owner:&quot;0xb5ce86c2ab9e2403ab47acfbe501845e2480fad9&quot;}, orderBy:planetLevel, first:100, skip:100){
+    id
+    planetLevel
+    owner {
+      id
+     }
+     x
+     y
+     spaceType
+   }
+ }
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="lower-case">lower case</h3>
+<p>All ids like are lower case like 0x0f45aba574aceba2e0717ca86e910211b34f9db9. Sadly blockscout and metamask can occasionally mix case in ids like 0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9!</p>
+<p>So for example this might return data:</p>
+<pre><code class="lang-graphql">{
+  players(where: {id: &quot;0x0f45aba574aceba2e0717ca86e910211b34f9db9&quot;}) {
+      id
+  }
+}
+</code></pre>
+<p>But this won&apos;t:</p>
+<pre><code class="lang-graphql">{
+  players(where: {id: &quot;0x0f45aBA574AcEbA2E0717Ca86e910211b34f9db9&quot;}) {
+      id
+  }
+}
+</code></pre>
+<p>Theres online <a href="https://search.brave.com/search?q=tolowercase+online&amp;source=web" target="_blank">case converters</a> that can help if you find yourself in this predicimant</p>
+<h3 id="leading-0x-and-padding">Leading 0x and padding</h3>
+<p>User ids (which are actually ethereum wallet addresses) are always shown with a leading 0x  and are zero paddded to 42 characters (0x0f45aba574aceba2e0717ca86e910211b34f9db9) . However planet locationId (00000000004896511cb246d2e6dfcde2dccc1b3855fcf69b53e046b09a929953) do NOT use a 0x in front and are 0 padded to 64 characters.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="subgraph.html" class="navigation navigation-prev " aria-label="Previous page: Dark Forest subgraph">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../snarking/running-a-remote-snarker.html" class="navigation navigation-next " aria-label="Next page: Running a remote SNARKer">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"How to query a subgraph","level":"5.5","depth":1,"next":{"title":"Running a remote SNARKer","level":"6.1","depth":1,"path":"snarking/running-a-remote-snarker.md","ref":"snarking/running-a-remote-snarker.md","articles":[]},"previous":{"title":"Dark Forest subgraph","level":"5.4","depth":1,"path":"developer-resources/subgraph.md","ref":"developer-resources/subgraph.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Dark Forest Developers","gitbook":"*"},"file":{"path":"developer-resources/subgraph-tutorial.md","mtime":"2021-09-29T01:08:25.489Z","type":"markdown"},"gitbook":{"version":"3.6.21","time":"2021-09-29T01:08:36.570Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
