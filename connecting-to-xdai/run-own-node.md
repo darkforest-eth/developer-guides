@@ -65,7 +65,6 @@ I added some custom configurations, so I choose to use the `Nethermind.Runner` b
 Edit your config file with something like `nano configs/xdai_dfdao.cfg` and change the following fields to allow access to your node from the internet:
 1. `JSONRPC: {"Enabled": true}`
 2. `JSONRPC: {"Host": DIGITAL_OCEAN_PUBLIC_IP}`
-  * These commands allow you to access your node from the Internet.
 3. Under Network add a new field.
 ```
   "Network": {
