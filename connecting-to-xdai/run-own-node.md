@@ -62,7 +62,7 @@ I added some custom configurations, so I choose to use the `Nethermind.Runner` b
 2. `cp configs/CONFIG_FILE configs/YOUR_CONFIGNAME`
   * for me, this was `cp configs/xdai_pruned_mev.cfg configs/xdai_dfdao.cfg`
 
-Edit your config. Here is [mine](https://gist.github.com/cha0sg0d/0c633efcb11db3b869a4450fb6035d7d) for reference.
+Edit your config file with something like `nano configs/xdai_dfdao.cfg` and change the following fields to allow access to your node from the internet:
 1. `JSONRPC: {"Enabled": true}`
 2. `JSONRPC: {"Host": DIGITAL_OCEAN_PUBLIC_IP}`
   * These commands allow you to access your node from the Internet.
