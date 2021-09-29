@@ -63,7 +63,7 @@ I added some custom configurations, so I choose to use the `Nethermind.Runner` b
         > pruning is the process of removing some of the intermediary state nodes - it saves some disk space but makes most of the historical state queries fail.
 
 2. `cp CONFIG_FILE YOUR_CONFIGNAME`
-  * for me, this was `cp xdai_pruned_mev.cfg xdai_dfdao.cfg`
+  * for me, this was `cp configs/xdai_pruned_mev.cfg configs/xdai_dfdao.cfg`
 
 Edit your config. Here is [mine](https://gist.github.com/cha0sg0d/0c633efcb11db3b869a4450fb6035d7d) for reference.
 1. `JSONRPC: {"Enabled": true}`
