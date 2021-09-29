@@ -26,7 +26,7 @@ But thats not all. With that knowledge you should be able to write contracts tha
 
 ## Circuits developers
 
-Dark Forest's innovative gameplay comes in no small part from its [ZK circuits](https://github.com/darkforest-eth/eth) design utilizing [iden3's circomlib](https://github.com/iden3/circomlib)
+Dark Forest's innovative gameplay comes in no small part from its [ZK circuits](https://github.com/darkforest-eth/circuits) design utilizing [iden3's circomlib](https://github.com/iden3/circomlib)
 
 ## Unaudited Community Resources
 
