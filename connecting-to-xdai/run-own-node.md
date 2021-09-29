@@ -54,7 +54,7 @@ From [ethhub](https://docs.ethhub.io/using-ethereum/ethereum-clients/nethermind/
 
 I added some custom configurations, so I choose to use the `Nethermind.Runner` binary with my custom config file.
 
-1. `cd nethermind/configs` 
+1. `cd nethermind` 
   * We want to sync an xDai node, so here are the options for xDai (xdai_dfdao is my custom config): 
   * ![](../.gitbook/assets/xdai-node/config.png)
   * I choose to copy `xdai_pruned_mev.cfg` because:
