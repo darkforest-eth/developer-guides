@@ -25,7 +25,7 @@ from Nethermind [docs](https://docs.nethermind.io/nethermind/first-steps-with-ne
       > If your sync is very slow (extended beyond two days) then very likely your setup cannot catch up with the chain progress.
     * ![](../.gitbook/assets/xdai-node/droplet.png)
 
-2. Remotely [connect](https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/) to the Droplet using ssh.
+2. Remotely [connect](https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/) to the Droplet using ssh. Probably something like `ssh root@157.245.5.42`
 * You should see the following on success:
 * ![](../.gitbook/assets/xdai-node/login.png)
 
