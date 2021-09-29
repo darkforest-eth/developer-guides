@@ -28,7 +28,7 @@
 * [Developing plugins locally](developer-resources/developing-plugins-locally.md)
 * [3rd-party contract development](developer-resources/3rd-party-contract-development.md)
 * [Dark Forest subgraph](developer-resources/subgraph.md)
-* [Using the Dark Forest subgraph](developer-resources/subgraph-tutorial.md)
+* [How to query a subgraph](developer-resources/subgraph-tutorial.md)
 
 ## SNARKing
 
