@@ -32,7 +32,7 @@ from Nethermind [docs](https://docs.nethermind.io/nethermind/first-steps-with-ne
 *Note: these commands are verbatim from [here](https://docs.nethermind.io/nethermind/ethereum-client/running-nethermind/running-the-client)*
 
 
-1. `wget [NETHERMIND_URL]` - use amd64 release from [downloads](https://downloads.nethermind.io/))
+1. `wget [NETHERMIND_URL]` - use the most recent linux amd64 release from [downloads](https://downloads.nethermind.io/))  Probably something like `wget https://nethdev.blob.core.windows.net/builds/nethermind-linux-amd64-1.11.3-fe90423.zip`
 2. ```sudo apt-get update && sudo apt-get install libsnappy-dev libc6-dev libc6 unzip -y``` - Linux dependencies
 3. `unzip NETHERMIND_URL -d nethermind` - unzip to nethermind folder
 4. `cd nethermimd`
