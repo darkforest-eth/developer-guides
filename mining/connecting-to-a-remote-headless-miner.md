@@ -35,7 +35,7 @@ Once you drop into the shell start `mimc-fast` or whatever remote miner client y
 
 ### Plugin use
 
-The Plugin is called Remote Explorer and is in the official client.
+The Plugin is called Remote Explorer and is in the official client, but does need one change from the default```
 Run it and then add your entries:
 
     http://localhost:8001/mine
