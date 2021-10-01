@@ -65,7 +65,8 @@ I added some custom configurations, so I choose to use the `Nethermind.Runner` b
 Edit your config file with something like `nano configs/xdai_dfdao.cfg` and change the following fields to allow access to your node from the internet:
 1. `JSONRPC: {"Enabled": true}`
 2. `JSONRPC: {"Host": DIGITAL_OCEAN_PUBLIC_IP}`
-3. Under Network add a new field.
+3. `JSONRPC: {"EthModuleConcurrentInstances": 6}`
+4. Under Network add a new field.
 ```
   "Network": {
     "ActivePeersMaxCount": 256,
