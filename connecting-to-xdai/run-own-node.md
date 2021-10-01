@@ -63,12 +63,21 @@ I added some custom configurations, so I choose to use the `Nethermind.Runner` b
   * for me, this was `cp configs/xdai_pruned_mev.cfg configs/xdai_dfdao.cfg`
 
 Edit your config file with something like `nano configs/xdai_dfdao.cfg` and change the following fields to allow access to your node from the internet:
-1. `JSONRPC: {"Enabled": true}`
-2. `JSONRPC: {"Host": DIGITAL_OCEAN_PUBLIC_IP}`
-3. `JSONRPC: {"EthModuleConcurrentInstances": 6}`
-4. Under Network add a new field.
+1. Your JSON RPC should look like this:
+```
+ "JsonRpc": {
+   "Enabled": true,
+   "Timeout": 20000,
+   "Host": "IP ADDRESS",
+   "Port": 8545,
+   "WebSocketsPort": 8546,
+   "EthModuleConcurrentInstances": 6
+ }
+```
+2. Under Network add a new field.
 ```
   "Network": {
+  ...
     "ActivePeersMaxCount": 256,
 ```
       > if you have a good connection and a reasonable machine then setting --Network.MaxActiveSyncPeers to 256 (see NetworkConfig secion in configuration) should give much better fast sync times (we use 256 peers to get 5 hours syncs)
