@@ -35,7 +35,7 @@ If you are running the server on your machine with the default configuration you
 
 - Add the IP address or the URL of the machine running the server into the plugin and set the concurrency to 1. (You can set the concurrency higher if you have a very powerful machine).
 
-![](../.gitbook/assets/snarker-plugin.png)
+![](../img/snarker-plugin.png)
 
 That is it! You should be generating your move snarks outside of your browser.
 

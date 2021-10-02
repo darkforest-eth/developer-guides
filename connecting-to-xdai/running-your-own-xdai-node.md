@@ -21,11 +21,11 @@ from Nethermind [docs](https://docs.nethermind.io/nethermind/first-steps-with-ne
     * `Ubuntu 20.4 / 8 GB / 4 CPUs 160 GB SSD Disk 5 TB transfer`
     * If this too slow, I synced a node in ~6 hours with the $80/month option
       > If your sync is very slow (extended beyond two days) then very likely your setup cannot catch up with the chain progress.
-    * ![](../.gitbook/assets/xdai-node/droplet.png)
+    * ![](../img/xdai-node/droplet.png)
 
 2. Remotely [connect](https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/) to the Droplet using ssh. Probably something like `ssh root@157.245.5.42`
 * You should see the following on success:
-* ![](../.gitbook/assets/xdai-node/login.png)
+* ![](../img/xdai-node/login.png)
 
 ### 2. Install Nethermind and dependencies
 
@@ -42,7 +42,7 @@ At this point, I diverged from the basic installation. This is because there are
 
 So in the `nethermind` folder you will see `Nethermind.Launcher` and `Nethermind.Runner`.
 
-* ![](../.gitbook/assets/xdai-node/nethermind.png)
+* ![](../img/xdai-node/nethermind.png)
 
 From [ethhub](https://docs.ethhub.io/using-ethereum/ethereum-clients/nethermind/)
 
@@ -53,7 +53,7 @@ I added some custom configurations, so I choose to use the `Nethermind.Runner` b
 
 1. `cd nethermind` 
   * We want to sync an xDai node, so here are the options for xDai (xdai_dfdao is my custom config): 
-  * ![](../.gitbook/assets/xdai-node/config.png)
+  * ![](../img/xdai-node/config.png)
   * I choose to copy `xdai_pruned_mev.cfg` because:
     1. I want the experiment with [mev](https://www.xdaichain.com/for-developers/developer-resources/mev-and-flashbots) on xDai
     2. I want to save size by pruning, at the cost of historical queries:  
@@ -109,10 +109,10 @@ root@ubuntu-s-4vcpu-8gb-nyc3-01:~/nethermind# ps
 And kill it with `ps PID` like `kill 13059`
 You can also check out the Digital Ocean Droplet Activity Dashboard, which should show a large increase in activity while syncing occurs.
 
-![](../.gitbook/assets/xdai-node/activity.png)
+![](../img/xdai-node/activity.png)
 
 3. Go to `http://DIGITAL_OCEAN_IP:8545` and you should see the following:
-  * ![](../.gitbook/assets/xdai-node/rpc.png)
+  * ![](../img/xdai-node/rpc.png)
 
 ### 5. Inspect logs and check node's health
 
@@ -129,7 +129,7 @@ Finally, once your node is synced or near synced, you can confirm your node is i
 
 `http://DIGITAL_OCEAN_IP:8545/health`
 
-![](../.gitbook/assets/xdai-node/health.png)
+![](../img/xdai-node/health.png)
 
 **Thanks for reading!**
 
