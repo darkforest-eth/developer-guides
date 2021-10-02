@@ -436,13 +436,13 @@
 <p>If your sync is very slow (extended beyond two days) then very likely your setup cannot catch up with the chain progress.</p>
 </blockquote>
 </li>
-<li><img src="../.gitbook/assets/xdai-node/droplet.png" alt></li>
+<li><img src="../img/xdai-node/droplet.png" alt></li>
 </ul>
 </li>
 <li><p>Remotely <a href="https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/" target="_blank">connect</a> to the Droplet using ssh. Probably something like <code>ssh root@157.245.5.42</code></p>
 </li>
 <li>You should see the following on success:</li>
-<li><img src="../.gitbook/assets/xdai-node/login.png" alt></li>
+<li><img src="../img/xdai-node/login.png" alt></li>
 </ol>
 <h3 id="2-install-nethermind-and-dependencies">2. Install Nethermind and dependencies</h3>
 <p><em>Note: these commands are verbatim from <a href="https://docs.nethermind.io/nethermind/ethereum-client/running-nethermind/running-the-client" target="_blank">here</a></em></p>
@@ -455,7 +455,7 @@
 <h3 id="3-configure-nethermind-for-dark-forest">3. Configure Nethermind for Dark Forest</h3>
 <p>So in the <code>nethermind</code> folder you will see <code>Nethermind.Launcher</code> and <code>Nethermind.Runner</code>.</p>
 <ul>
-<li><img src="../.gitbook/assets/xdai-node/nethermind.png" alt></li>
+<li><img src="../img/xdai-node/nethermind.png" alt></li>
 </ul>
 <p>From <a href="https://docs.ethhub.io/using-ethereum/ethereum-clients/nethermind/" target="_blank">ethhub</a></p>
 <blockquote>
@@ -467,7 +467,7 @@ Nethermind.Runner is the actual client binary similar to the geth binary and sup
 <li><p><code>cd nethermind</code> </p>
 <ul>
 <li>We want to sync an xDai node, so here are the options for xDai (xdai_dfdao is my custom config): </li>
-<li><img src="../.gitbook/assets/xdai-node/config.png" alt></li>
+<li><img src="../img/xdai-node/config.png" alt></li>
 <li>I choose to copy <code>xdai_pruned_mev.cfg</code> because:<ol>
 <li>I want the experiment with <a href="https://www.xdaichain.com/for-developers/developer-resources/mev-and-flashbots" target="_blank">mev</a> on xDai</li>
 <li>I want to save size by pruning, at the cost of historical queries:  <blockquote>
@@ -527,10 +527,10 @@ Nethermind.Runner is the actual client binary similar to the geth binary and sup
   13441 pts/0    00:00:00 ps
 </code></pre><p>And kill it with <code>ps PID</code> like <code>kill 13059</code>
 You can also check out the Digital Ocean Droplet Activity Dashboard, which should show a large increase in activity while syncing occurs.</p>
-<p><img src="../.gitbook/assets/xdai-node/activity.png" alt></p>
+<p><img src="../img/xdai-node/activity.png" alt></p>
 <ol>
 <li>Go to <code>http://DIGITAL_OCEAN_IP:8545</code> and you should see the following:<ul>
-<li><img src="../.gitbook/assets/xdai-node/rpc.png" alt></li>
+<li><img src="../img/xdai-node/rpc.png" alt></li>
 </ul>
 </li>
 </ol>
@@ -542,7 +542,7 @@ and once the file got too big <code>tail -n 10 filename</code> to view the newes
 <p>I suggest following along and learning about the logs.</p>
 <p>Finally, once your node is synced or near synced, you can confirm your node is in good shape:</p>
 <p><code>http://DIGITAL_OCEAN_IP:8545/health</code></p>
-<p><img src="../.gitbook/assets/xdai-node/health.png" alt></p>
+<p><img src="../img/xdai-node/health.png" alt></p>
 <p><strong>Thanks for reading!</strong></p>
 <p>This guide was originally submitted by <a href="https://twitter.com/cha0sg0d11" target="_blank">cha0sg0d11</a>.</p>
 
@@ -588,7 +588,7 @@ and once the file got too big <code>tail -n 10 filename</code> to view the newes
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Running your own xDAI node","level":"2.3","depth":1,"next":{"title":"What is a plugin?","level":"3.1","depth":1,"path":"plugins/what-is-a-plugin.md","ref":"plugins/what-is-a-plugin.md","articles":[]},"previous":{"title":"Changing your RPC endpoint","level":"2.2","depth":1,"path":"connecting-to-xdai/changing-your-rpc-endpoint.md","ref":"connecting-to-xdai/changing-your-rpc-endpoint.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Dark Forest Developers","gitbook":"*"},"file":{"path":"connecting-to-xdai/running-your-own-xdai-node.md","mtime":"2021-10-02T00:07:24.799Z","type":"markdown"},"gitbook":{"version":"3.6.21","time":"2021-10-02T00:07:35.812Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Running your own xDAI node","level":"2.3","depth":1,"next":{"title":"What is a plugin?","level":"3.1","depth":1,"path":"plugins/what-is-a-plugin.md","ref":"plugins/what-is-a-plugin.md","articles":[]},"previous":{"title":"Changing your RPC endpoint","level":"2.2","depth":1,"path":"connecting-to-xdai/changing-your-rpc-endpoint.md","ref":"connecting-to-xdai/changing-your-rpc-endpoint.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Dark Forest Developers","gitbook":"*"},"file":{"path":"connecting-to-xdai/running-your-own-xdai-node.md","mtime":"2021-10-02T00:25:20.855Z","type":"markdown"},"gitbook":{"version":"3.6.21","time":"2021-10-02T00:25:33.820Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
