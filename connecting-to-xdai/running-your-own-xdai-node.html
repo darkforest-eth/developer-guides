@@ -409,8 +409,142 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="running-your-own-xdai-node">Running your own xDAI node</h1>
-<p>This article is a stub. Maybe you can help write it!</p>
+                                <h1 id="how-to-run-your-own-xdai-node-on-digital-ocean">How to run your own xDai Node on Digital Ocean</h1>
+<h3 id="why-run-your-own-xdai-node">Why run your own xDai Node?</h3>
+<ul>
+<li>No queue of other people&apos;s transactions</li>
+<li>No downtime. Thousands of other players are attempting to use the same free rpc endpoint as you otherwise!</li>
+<li>Faster access. The memory and cpu speed of the free rpc is not published. By running your own node you can use a beefier box. </li>
+</ul>
+<p>The clients that have known xDai support include <a href="https://www.xdaichain.com/for-developers/install-xdai-client/parity" target="_blank">OpenEthereum</a> (formerly Parity) and <a href="https://www.xdaichain.com/for-developers/install-xdai-client/nethermind" target="_blank">Nethermind</a>. </p>
+<h3 id="why-nethermind">Why Nethermind</h3>
+<p>from xDai <a href="https://www.xdaichain.com/for-developers/install-xdai-client/nethermind" target="_blank">docs</a></p>
+<blockquote>
+<p>A majority of xDai validators are now running the Nethermind client. The latest version includes support for MEV via flashbots and increased default xDAI TxPool size from 1024 transactions to 2048.</p>
+</blockquote>
+<h3 id="why-digital-ocean-for-hosting">Why Digital Ocean for hosting</h3>
+<p>from Nethermind <a href="https://docs.nethermind.io/nethermind/first-steps-with-nethermind/hardware-requirements" target="_blank">docs</a></p>
+<blockquote>
+<p>Generally the faster IO operations the better. For this reason Digital Ocean and UpCloud are so far the best cloud providers we have tested when running Nethermind nodes.</p>
+</blockquote>
+<h3 id="1-setting-up-a-digital-ocean-instance">1. Setting up a Digital Ocean Instance</h3>
+<ol>
+<li><p>Buy a droplet (cloud computer). I recommend a machine with <em>at least</em> the following specs ($40/month):</p>
+<ul>
+<li><code>Ubuntu 20.4 / 8 GB / 4 CPUs 160 GB SSD Disk 5 TB transfer</code></li>
+<li>If this too slow, I synced a node in ~6 hours with the $80/month option<blockquote>
+<p>If your sync is very slow (extended beyond two days) then very likely your setup cannot catch up with the chain progress.</p>
+</blockquote>
+</li>
+<li><img src="../.gitbook/assets/xdai-node/droplet.png" alt></li>
+</ul>
+</li>
+<li><p>Remotely <a href="https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/" target="_blank">connect</a> to the Droplet using ssh. Probably something like <code>ssh root@157.245.5.42</code></p>
+</li>
+<li>You should see the following on success:</li>
+<li><img src="../.gitbook/assets/xdai-node/login.png" alt></li>
+</ol>
+<h3 id="2-install-nethermind-and-dependencies">2. Install Nethermind and dependencies</h3>
+<p><em>Note: these commands are verbatim from <a href="https://docs.nethermind.io/nethermind/ethereum-client/running-nethermind/running-the-client" target="_blank">here</a></em></p>
+<ol>
+<li><code>wget [NETHERMIND_URL]</code> - use the most recent linux amd64 release from <a href="https://downloads.nethermind.io/" target="_blank">downloads</a>)  Probably something like <code>wget https://nethdev.blob.core.windows.net/builds/nethermind-linux-amd64-1.11.3-fe90423.zip</code></li>
+<li><code>sudo apt-get update &amp;&amp; sudo apt-get install libsnappy-dev libc6-dev libc6 unzip -y</code> - Linux dependencies</li>
+<li><code>unzip NETHERMIND_URL -d nethermind</code> - unzip to nethermind folder</li>
+</ol>
+<p>At this point, I diverged from the basic installation. This is because there are some specific configuration settings that are nice for running a node (and playing Dark Forest). </p>
+<h3 id="3-configure-nethermind-for-dark-forest">3. Configure Nethermind for Dark Forest</h3>
+<p>So in the <code>nethermind</code> folder you will see <code>Nethermind.Launcher</code> and <code>Nethermind.Runner</code>.</p>
+<ul>
+<li><img src="../.gitbook/assets/xdai-node/nethermind.png" alt></li>
+</ul>
+<p>From <a href="https://docs.ethhub.io/using-ethereum/ethereum-clients/nethermind/" target="_blank">ethhub</a></p>
+<blockquote>
+<p>Nethermind.Launcher is an interactive prompt that allows you to choose the network which then calls Nethermind.Runner with the appropriate config file. This is the quickest way to get up and running.
+Nethermind.Runner is the actual client binary similar to the geth binary and supports both cli options or a JSON configuration file. <code>Nethermind.Runner --config &lt;path_to_config&gt;</code></p>
+</blockquote>
+<p>I added some custom configurations, so I choose to use the <code>Nethermind.Runner</code> binary with my custom config file.</p>
+<ol>
+<li><p><code>cd nethermind</code> </p>
+<ul>
+<li>We want to sync an xDai node, so here are the options for xDai (xdai_dfdao is my custom config): </li>
+<li><img src="../.gitbook/assets/xdai-node/config.png" alt></li>
+<li>I choose to copy <code>xdai_pruned_mev.cfg</code> because:<ol>
+<li>I want the experiment with <a href="https://www.xdaichain.com/for-developers/developer-resources/mev-and-flashbots" target="_blank">mev</a> on xDai</li>
+<li>I want to save size by pruning, at the cost of historical queries:  <blockquote>
+<p>pruning is the process of removing some of the intermediary state nodes - it saves some disk space but makes most of the historical state queries fail.</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><code>cp configs/CONFIG_FILE configs/YOUR_CONFIGNAME</code></p>
+<ul>
+<li>for me, this was <code>cp configs/xdai_pruned_mev.cfg configs/xdai_dfdao.cfg</code></li>
+</ul>
+</li>
+</ol>
+<p>Edit your config file with something like <code>nano configs/xdai_dfdao.cfg</code> and change the following fields to allow access to your node from the internet:</p>
+<ol>
+<li>Your JSON RPC should look like this:<pre><code>&quot;JsonRpc&quot;: {
+&quot;Enabled&quot;: true,
+&quot;Timeout&quot;: 20000,
+&quot;Host&quot;: &quot;IP ADDRESS&quot;,
+&quot;Port&quot;: 8545,
+&quot;WebSocketsPort&quot;: 8546,
+&quot;EthModuleConcurrentInstances&quot;: 6
+}
+</code></pre></li>
+<li>Under Network add a new field.<pre><code>&quot;Network&quot;: {
+...
+ &quot;ActivePeersMaxCount&quot;: 256,
+</code></pre><blockquote>
+<p>if you have a good connection and a reasonable machine then setting --Network.MaxActiveSyncPeers to 256 (see NetworkConfig secion in configuration) should give much better fast sync times (we use 256 peers to get 5 hours syncs)</p>
+<ul>
+<li>Note that even though <code>ActivePeersMaxCount</code> is <a href="https://docs.nethermind.io/nethermind/ethereum-client/configuration/network" target="_blank">deprecated</a>, this setting worked for me (and <code>MaxActiveSyncPeers</code>) didn&apos;t.</li>
+</ul>
+</blockquote>
+</li>
+<li>Exit and save the file</li>
+</ol>
+<h3 id="4-run-nethermind-in-background">4. Run Nethermind in background</h3>
+<p>So now we&apos;re ready to go. </p>
+<p>However, if you run <code>./Nethermind.Runner --config &lt;path-to-config-file&gt;</code> and logout, your process will stop.</p>
+<p>To avoid this, you can use <a href="https://www.geeksforgeeks.org/nohup-command-in-linux-with-examples/" target="_blank">nohup</a> and the <code>&amp;</code> operator to run your process in the background.</p>
+<ol>
+<li><code>nohup ./Nethermind.Runner --config &lt;path-to-config-file&gt; &amp;</code></li>
+<li>optional: If you want to enable Health <a href="https://docs.nethermind.io/nethermind/ethereum-client/monitoring-node-health" target="_blank">Checks</a>, run the following:<ul>
+<li><code>nohup ./Nethermind.Runner --config &lt;path-to-config-file&gt; --HealthChecks.Enabled true &amp;</code></li>
+</ul>
+</li>
+</ol>
+<p>This command will create a new file <code>nohup.out</code> (name can be configured with <code>nohup ... &gt; output.txt</code>) in the <code>nethermind</code> directory, with logs that you can inspect. </p>
+<p>You can find the process id in order to stop the now backgrounded syncing process with <code>ps</code>:</p>
+<pre><code>root@ubuntu-s-4vcpu-8gb-nyc3-01:~/nethermind# ps
+    PID TTY          TIME CMD
+   8083 pts/0    00:00:00 bash
+  13059 pts/0    00:07:10 Nethermind.Runn
+  13441 pts/0    00:00:00 ps
+</code></pre><p>And kill it with <code>ps PID</code> like <code>kill 13059</code>
+You can also check out the Digital Ocean Droplet Activity Dashboard, which should show a large increase in activity while syncing occurs.</p>
+<p><img src="../.gitbook/assets/xdai-node/activity.png" alt></p>
+<ol>
+<li>Go to <code>http://DIGITAL_OCEAN_IP:8545</code> and you should see the following:<ul>
+<li><img src="../.gitbook/assets/xdai-node/rpc.png" alt></li>
+</ul>
+</li>
+</ol>
+<h3 id="5-inspect-logs-and-check-nodes-health">5. Inspect logs and check node&apos;s health</h3>
+<p>Logs are in two places: <code>nohup.out</code> (or whatever you name your output file) and <code>nethermind/logs/xdai.logs.txt</code>.</p>
+<p>I inspected both sets of logs with the <code>cat filename</code> command
+and once the file got too big <code>tail -n 10 filename</code> to view the newest entries.</p>
+<p>Nethermind provides an excellent <a href="https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#explaining-nethermind-logs" target="_blank">explanation</a> of what the logs are telling you about the speed of your fast sync.</p>
+<p>I suggest following along and learning about the logs.</p>
+<p>Finally, once your node is synced or near synced, you can confirm your node is in good shape:</p>
+<p><code>http://DIGITAL_OCEAN_IP:8545/health</code></p>
+<p><img src="../.gitbook/assets/xdai-node/health.png" alt></p>
+<p><strong>Thanks for reading!</strong></p>
+<p>This guide was originally submitted by <a href="https://twitter.com/cha0sg0d11" target="_blank">cha0sg0d11</a>.</p>
 
                                 
                                 </section>
@@ -454,7 +588,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Running your own xDAI node","level":"2.3","depth":1,"next":{"title":"What is a plugin?","level":"3.1","depth":1,"path":"plugins/what-is-a-plugin.md","ref":"plugins/what-is-a-plugin.md","articles":[]},"previous":{"title":"Changing your RPC endpoint","level":"2.2","depth":1,"path":"connecting-to-xdai/changing-your-rpc-endpoint.md","ref":"connecting-to-xdai/changing-your-rpc-endpoint.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Dark Forest Developers","gitbook":"*"},"file":{"path":"connecting-to-xdai/running-your-own-xdai-node.md","mtime":"2021-10-01T23:13:05.146Z","type":"markdown"},"gitbook":{"version":"3.6.21","time":"2021-10-01T23:13:16.169Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Running your own xDAI node","level":"2.3","depth":1,"next":{"title":"What is a plugin?","level":"3.1","depth":1,"path":"plugins/what-is-a-plugin.md","ref":"plugins/what-is-a-plugin.md","articles":[]},"previous":{"title":"Changing your RPC endpoint","level":"2.2","depth":1,"path":"connecting-to-xdai/changing-your-rpc-endpoint.md","ref":"connecting-to-xdai/changing-your-rpc-endpoint.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Dark Forest Developers","gitbook":"*"},"file":{"path":"connecting-to-xdai/running-your-own-xdai-node.md","mtime":"2021-10-02T00:07:24.799Z","type":"markdown"},"gitbook":{"version":"3.6.21","time":"2021-10-02T00:07:35.812Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
