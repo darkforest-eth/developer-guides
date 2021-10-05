@@ -6,7 +6,7 @@ description: Dark Forest developer resources
 
 With Ethereum gaming, the closed source server model has been replaced by a few open source Ethereum contracts. This means you can hack literally every other part of the experience to your liking.
 
-Dark forest [publishes npm packages](https://www.npmjs.com/search?q=%40darkforest_eth) for its contract addresses, types, and utilities functions and releases an [official subgraph](subgraph.md) to ease your development workflow.
+Dark forest [publishes npm packages](https://www.npmjs.com/search?q=%40darkforest_eth) for its contract addresses, types, and utilities functions and releases an [official subgraph](developer-resources/subgraph.md) to ease your development workflow.
 
 ## Plugins Developers
 
