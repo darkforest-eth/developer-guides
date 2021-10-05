@@ -14,3 +14,4 @@ The [graph schema and mappings](https://github.com/darkforest-eth/eth/tree/maste
 * [v6 R1](https://thegraph.com/legacy-explorer/subgraph/darkforest-eth/dark-forest-v06-round-1)
 * [V6 R2](https://thegraph.com/legacy-explorer/subgraph/darkforest-eth/dark-forest-v06-round-2)
 * [V6 R3](https://thegraph.com/legacy-explorer/subgraph/darkforest-eth/dark-forest-v06-round-3)
+* [V6 R4](https://thegraph.com/legacy-explorer/subgraph/darkforest-eth/dark-forest-v06-round-4)
